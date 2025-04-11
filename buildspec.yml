@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # Or another version if you're using one
+    commands:
+      - echo Installing Node.js dependencies...
+      - npm install
+
+  build:
+    commands:
+      - echo Build phase (not required for this project)
+
+artifacts:
+  files:
+    - '**/*'
+    - '!node_modules/**/*' # Optional: exclude node_modules if deploying to Elastic Beanstalk
