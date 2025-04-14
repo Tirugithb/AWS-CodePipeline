@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080; // <-- Use Elastic Beanstalk's port
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.listen(port);
-console.log(`App running on http://localhost:${port}`);
+app.listen(port, () => {
+  console.log(`App running on http://localhost:${port}`);
+});
